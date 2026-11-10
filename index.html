@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avident | Odontología de excelencia</title>
+  <meta name="description" content="Avident: odontología estética, ortodoncia e implantes con tecnología de vanguardia y atención personalizada.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Avident | Odontología de excelencia">
+  <meta property="og:description" content="Odontología estética, ortodoncia e implantes con atención personalizada.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="preloader__logo" viewBox="0 0 64 64" width="64" height="64"><use href="#icon-tooth"/></svg>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Iconos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f3dc9a"/><stop offset=".5" stop-color="#c9a24b"/><stop offset="1" stop-color="#8a6a22"/>
+      </linearGradient>
+      <symbol id="icon-tooth" viewBox="0 0 64 64">
+        <path d="M32 10c-5-4-14-4-18 3-4 7-1 15 2 21 2 5 2 12 5 18 2 3 5 2 6-2 1-5 2-10 5-10s4 5 5 10c1 4 4 5 6 2 3-6 3-13 5-18 3-6 6-14 2-21-4-7-13-7-18-3z" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-sparkle" viewBox="0 0 24 24"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-align" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16M8 4v16M16 4v16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-implant" viewBox="0 0 24 24"><path d="M7 3h10v5H7zM9 8v13M15 8v13M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z M8.5 12l2.5 2.5L16 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+      <symbol id="icon-child" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3M4 12h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="currentColor"/></symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="header" id="header">
+    <a href="#inicio" class="brand" data-nav>
+      <svg width="30" height="30"><use href="#icon-tooth"/></svg>
+      <span>Av<em>ident</em></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#inicio" data-nav class="nav__link">Inicio</a>
+      <a href="#servicios" data-nav class="nav__link">Servicios</a>
+      <a href="#nosotros" data-nav class="nav__link">Nosotros</a>
+      <a href="#resultados" data-nav class="nav__link">Resultados</a>
+      <a href="#opiniones" data-nav class="nav__link">Opiniones</a>
+      <a href="#faq" data-nav class="nav__link">Preguntas</a>
+      <a href="#cita" data-nav class="btn btn--gold btn--sm nav__cta">Agendar cita</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="section hero" id="inicio">
+      <div class="card hero__card" data-reveal>
+        <div class="hero__text">
+          <span class="eyebrow">Odontología de excelencia</span>
+          <h1>Una sonrisa <span class="gold-text">impecable</span>,<br>diseñada para ti.</h1>
+          <p class="lead">Tecnología digital, técnica depurada y un trato cercano. Cuidamos cada detalle para que sonreír sea tu mejor carta de presentación.</p>
+          <div class="hero__actions">
+            <a href="#cita" data-nav class="btn btn--gold">Reservar valoración</a>
+            <a href="#servicios" data-nav class="btn btn--ghost">Ver tratamientos</a>
+          </div>
+          <ul class="hero__badges">
+            <li><strong data-count="15" data-suffix="+">0</strong><span>años de experiencia</span></li>
+            <li><strong data-count="8400" data-suffix="+">0</strong><span>pacientes felices</span></li>
+            <li><strong data-count="98" data-suffix="%">0</strong><span>satisfacción</span></li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orb"></div>
+          <svg class="hero__tooth" viewBox="0 0 64 64"><use href="#icon-tooth"/></svg>
+          <span class="chip chip--a"><svg width="16" height="16"><use href="#icon-sparkle"/></svg> Diseño de sonrisa</span>
+          <span class="chip chip--b"><svg width="16" height="16"><use href="#icon-scan"/></svg> Escáner 3D</span>
+          <span class="chip chip--c"><svg width="16" height="16"><use href="#icon-shield"/></svg> Sin dolor</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="card" data-reveal>
+        <header class="section__head">
+          <span class="eyebrow">Tratamientos</span>
+          <h2>Cuidado integral, <span class="gold-text">sin concesiones</span></h2>
+          <p class="lead">Cada plan se diseña a tu medida tras un diagnóstico digital completo.</p>
+        </header>
+        <div class="grid grid--services">
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-sparkle"/></svg>
+            <h3>Estética dental</h3>
+            <p>Blanqueamiento, carillas y diseño de sonrisa con resultados naturales.</p>
+          </article>
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-align"/></svg>
+            <h3>Ortodoncia</h3>
+            <p>Alineadores transparentes y brackets estéticos para todas las edades.</p>
+          </article>
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-implant"/></svg>
+            <h3>Implantes</h3>
+            <p>Cirugía guiada por ordenador para una recuperación rápida y precisa.</p>
+          </article>
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-shield"/></svg>
+            <h3>Prevención</h3>
+            <p>Limpiezas profundas, revisiones y planes de mantenimiento personalizados.</p>
+          </article>
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-child"/></svg>
+            <h3>Odontopediatría</h3>
+            <p>Un ambiente amable para que los más pequeños pierdan el miedo.</p>
+          </article>
+          <article class="service tilt" tabindex="0">
+            <svg width="38" height="38"><use href="#icon-scan"/></svg>
+            <h3>Diagnóstico digital</h3>
+            <p>Radiografía 3D y escáner intraoral para planificar con exactitud.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section" id="nosotros">
+      <div class="card card--dark about" data-reveal>
+        <div class="about__text">
+          <span class="eyebrow">Nuestra filosofía</span>
+          <h2>Precisión de <span class="gold-text">atelier</span>, calidez humana</h2>
+          <p class="lead">Combinamos lo último en tecnología con una atención pausada y transparente. Sin prisas, sin sorpresas: tú decides con toda la información.</p>
+          <ul class="ticks">
+            <li>Planes de tratamiento claros y por escrito</li>
+            <li>Materiales biocompatibles de primera línea</li>
+            <li>Sedación consciente para pacientes ansiosos</li>
+            <li>Seguimiento posterior sin costo adicional</li>
+          </ul>
+        </div>
+        <div class="steps">
+          <h3>Tu primera visita</h3>
+          <ol>
+            <li class="step"><b>01</b><div><strong>Escucha</strong><span>Conocemos tus objetivos y tu historial.</span></div></li>
+            <li class="step"><b>02</b><div><strong>Diagnóstico</strong><span>Escáner y estudio completo en una sola cita.</span></div></li>
+            <li class="step"><b>03</b><div><strong>Plan</strong><span>Opciones, tiempos y presupuesto transparente.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="section" id="resultados">
+      <div class="card" data-reveal>
+        <header class="section__head">
+          <span class="eyebrow">Resultados</span>
+          <h2>Del antes al <span class="gold-text">después</span></h2>
+          <p class="lead">Desliza para comparar el efecto de un blanqueamiento profesional.</p>
+        </header>
+        <div class="compare" id="compare">
+          <div class="compare__side compare__after"><span>Después</span></div>
+          <div class="compare__side compare__before" id="compareBefore"><span>Antes</span></div>
+          <div class="compare__handle" id="compareHandle" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></div>
+          <div class="compare__teeth" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#icon-tooth"/></svg>
+            <svg viewBox="0 0 64 64"><use href="#icon-tooth"/></svg>
+            <svg viewBox="0 0 64 64"><use href="#icon-tooth"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <section class="section" id="opiniones">
+      <div class="card card--dark" data-reveal>
+        <header class="section__head">
+          <span class="eyebrow">Opiniones</span>
+          <h2>Lo que dicen <span class="gold-text">nuestros pacientes</span></h2>
+        </header>
+        <div class="slider" id="slider">
+          <div class="slider__track" id="sliderTrack">
+            <figure class="quote">
+              <div class="stars" aria-label="5 estrellas"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></div>
+              <blockquote>“Llegué con miedo y salí con una sonrisa nueva. Todo fue claro, cómodo y sin dolor.”</blockquote>
+              <figcaption>Mariana R. · Diseño de sonrisa</figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="stars" aria-label="5 estrellas"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></div>
+              <blockquote>“Mis implantes quedaron perfectos. El equipo me explicó cada paso y cumplieron los tiempos.”</blockquote>
+              <figcaption>Carlos M. · Implantes</figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="stars" aria-label="5 estrellas"><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg><svg><use href="#icon-star"/></svg></div>
+              <blockquote>“Mi hija ahora quiere ir al dentista. Eso lo dice todo sobre el trato que reciben.”</blockquote>
+              <figcaption>Laura G. · Odontopediatría</figcaption>
+            </figure>
+          </div>
+          <div class="slider__dots" id="sliderDots" role="tablist"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="card" data-reveal>
+        <header class="section__head">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Resolvemos tus <span class="gold-text">dudas</span></h2>
+        </header>
+        <div class="faq" id="faqList">
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Duele el blanqueamiento dental?<svg width="20" height="20"><use href="#icon-plus"/></svg></button>
+            <div class="faq__a"><p>Puede haber una ligera sensibilidad temporal. Usamos protocolos desensibilizantes para que la experiencia sea cómoda.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Cuánto dura un tratamiento de ortodoncia?<svg width="20" height="20"><use href="#icon-plus"/></svg></button>
+            <div class="faq__a"><p>Depende del caso, normalmente entre 6 y 24 meses. En la valoración te damos un estimado preciso.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Cada cuánto debo hacerme una revisión?<svg width="20" height="20"><use href="#icon-plus"/></svg></button>
+            <div class="faq__a"><p>Recomendamos una revisión y limpieza cada seis meses para prevenir problemas mayores.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Aceptan pagos a plazos?<svg width="20" height="20"><use href="#icon-plus"/></svg></button>
+            <div class="faq__a"><p>Sí, ofrecemos planes de financiamiento flexibles. Consúltalos durante tu primera visita.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITA -->
+    <section class="section" id="cita">
+      <div class="card card--dark booking" data-reveal>
+        <div class="booking__info">
+          <span class="eyebrow">Reserva</span>
+          <h2>Agenda tu <span class="gold-text">valoración</span></h2>
+          <p class="lead">Déjanos tus datos y te confirmaremos la cita en menos de 24 horas.</p>
+          <ul class="contact">
+            <li>📍 Av. Reforma 1200, Piso 4</li>
+            <li>📞 +52 55 1234 5678</li>
+            <li>✉️ hola@avident.com</li>
+            <li>🕘 Lun – Sáb · 9:00 a 19:00</li>
+          </ul>
+        </div>
+        <form class="form" id="bookingForm" novalidate>
+          <label class="field"><span>Nombre completo</span><input type="text" name="nombre" required minlength="3" autocomplete="name"><small></small></label>
+          <label class="field"><span>Correo electrónico</span><input type="email" name="email" required autocomplete="email"><small></small></label>
+          <label class="field"><span>Teléfono</span><input type="tel" name="tel" required pattern="[0-9+\s()-]{8,}" autocomplete="tel"><small></small></label>
+          <div class="field-row">
+            <label class="field"><span>Tratamiento</span>
+              <select name="servicio" required>
+                <option value="">Selecciona…</option>
+                <option>Valoración general</option><option>Estética dental</option><option>Ortodoncia</option><option>Implantes</option><option>Odontopediatría</option>
+              </select><small></small></label>
+            <label class="field"><span>Fecha preferida</span><input type="date" name="fecha" required><small></small></label>
+          </div>
+          <button type="submit" class="btn btn--gold btn--block">Solicitar cita</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#inicio" data-nav class="brand"><svg width="26" height="26"><use href="#icon-tooth"/></svg><span>Av<em>ident</em></span></a>
+      <p>© <span id="year"></span> Avident. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+=====================================================
+ AVIDENT - GUIA PARA PUBLICAR CON GITHUB Y VERCEL
+=====================================================
+
+ESTRUCTURA DEL PROYECTO
+-----------------------
+index.html            Pagina principal
+vercel.json           Configuracion de Vercel (cabeceras y cache)
+.gitignore            Archivos que Git ignora
+css/                  tokens, base, components, sections, animations, responsive
+js/main.js            Punto de entrada (modulos ES)
+js/modules/           Un archivo por funcionalidad
+assets/               Favicon e imagenes
+
+ANTES DE EMPEZAR
+----------------
+- Tener cuenta en https://github.com y en https://vercel.com
+  (en Vercel entra con "Continue with GitHub").
+- Tener Git instalado (https://git-scm.com).
+
+PROBAR EN LOCAL (opcional)
+--------------------------
+Los modulos JS necesitan un servidor, no abrir el archivo con doble clic.
+En la carpeta del proyecto ejecuta:
+    npx serve
+o usa la extension "Live Server" de VS Code.
+
+PASO 1: SUBIR A GITHUB
+----------------------
+1. En GitHub pulsa "New repository", ponle un nombre (ej. avident),
+   dejalo vacio (sin README) y crealo.
+2. En la terminal, dentro de la carpeta del proyecto:
+
+    git init
+    git add .
+    git commit -m "Primera version"
+    git branch -M main
+    git remote add origin https://github.com/TU-USUARIO/avident.git
+    git push -u origin main
+
+PASO 2: PUBLICAR EN VERCEL
+--------------------------
+1. En https://vercel.com/new elige "Import" sobre tu repositorio.
+2. Configuracion:
+     Framework Preset ..... Other
+     Build Command ........ (dejar vacio)
+     Output Directory ..... (dejar vacio)
+3. Pulsa "Deploy". En unos segundos tendras una URL como
+   https://avident.vercel.app
+
+ACTUALIZAR LA PAGINA
+--------------------
+Cada cambio que subas se publica solo:
+    git add .
+    git commit -m "Descripcion del cambio"
+    git push
+
+DOMINIO PROPIO (opcional)
+-------------------------
+En Vercel: Project > Settings > Domains > Add.
+
+PERSONALIZAR
+------------
+- Colores, tipografias y espaciados: css/tokens.css
+- Textos, telefono, direccion y correo: index.html
+- Nota: el formulario de cita es solo visual (muestra una
+  confirmacion). Para recibir correos reales se puede conectar a
+  un servicio como Formspree o EmailJS.

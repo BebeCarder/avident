@@ -1,0 +1,24 @@
+/* Aparición al hacer scroll */
+[data-reveal] { opacity: 0; transform: translateY(2.5rem) scale(.96); transition: opacity .8s var(--ease), transform .9s var(--pop); }
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* Efecto POP (se aplica por JS en clics y cambios de sección) */
+.pop { animation: pop .55s var(--pop); }
+.pop-section { animation: popSection .8s var(--pop); }
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(.88); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes popSection {
+  0% { transform: scale(.97); }
+  60% { transform: scale(1.012); }
+  100% { transform: scale(1); }
+}
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.2); opacity: 1; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
