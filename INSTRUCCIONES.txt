@@ -35,7 +35,7 @@ PASO 1: SUBIR A GITHUB
     git add .
     git commit -m "Primera version"
     git branch -M main
-    git remote add origin https://github.com/TU-USUARIO/avident.git
+    git remote add origin https://https://github.com/BebeCarder/avident
     git push -u origin main
 
 PASO 2: PUBLICAR EN VERCEL
