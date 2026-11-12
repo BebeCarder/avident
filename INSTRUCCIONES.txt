@@ -2,6 +2,10 @@
  AVIDENT - GUIA PARA PUBLICAR CON GITHUB Y VERCEL
 =====================================================
 
+Repositorio: https://github.com/BebeCarder/avident
+Sitio de la Dra. Avril Aurora Ramos Barrientos
+(egresada de la Facultad de Odontologia de la Universidad Autonoma de Guerrero)
+
 ESTRUCTURA DEL PROYECTO
 -----------------------
 index.html            Pagina principal
@@ -27,20 +31,26 @@ o usa la extension "Live Server" de VS Code.
 
 PASO 1: SUBIR A GITHUB
 ----------------------
-1. En GitHub pulsa "New repository", ponle un nombre (ej. avident),
-   dejalo vacio (sin README) y crealo.
-2. En la terminal, dentro de la carpeta del proyecto:
+El repositorio ya existe y la carpeta ya esta conectada a el
+(origin = https://github.com/BebeCarder/avident.git).
+Para subir los cambios, dentro de la carpeta del proyecto:
 
+    git add .
+    git commit -m "Descripcion del cambio"
+    git push
+
+(Si empezaras desde cero en otra carpeta:
     git init
     git add .
     git commit -m "Primera version"
     git branch -M main
     git remote add origin https://github.com/BebeCarder/avident.git
-    git push -u origin main
+    git push -u origin main )
 
 PASO 2: PUBLICAR EN VERCEL
 --------------------------
-1. En https://vercel.com/new elige "Import" sobre tu repositorio.
+1. En https://vercel.com/new elige "Import" sobre el repositorio
+   BebeCarder/avident.
 2. Configuracion:
      Framework Preset ..... Other
      Build Command ........ (dejar vacio)
@@ -50,10 +60,16 @@ PASO 2: PUBLICAR EN VERCEL
 
 ACTUALIZAR LA PAGINA
 --------------------
-Cada cambio que subas se publica solo:
-    git add .
-    git commit -m "Descripcion del cambio"
-    git push
+Cada "git push" a la rama main se publica solo en Vercel.
+
+IMPORTANTE - CACHE DE CSS/JS/ASSETS
+-----------------------------------
+vercel.json guarda css/, js/ y assets/ en cache por 1 anio. Si cambias
+un archivo de esas carpetas y los visitantes siguen viendo la version
+vieja, cambia la version en los enlaces de index.html, por ejemplo:
+    <link rel="stylesheet" href="css/components.css?v=2">
+    <script type="module" src="js/main.js?v=2"></script>
+(Los cambios en index.html se ven de inmediato.)
 
 DOMINIO PROPIO (opcional)
 -------------------------
@@ -62,7 +78,20 @@ En Vercel: Project > Settings > Domains > Add.
 PERSONALIZAR
 ------------
 - Colores, tipografias y espaciados: css/tokens.css
-- Textos, telefono, direccion y correo: index.html
+- Textos, direccion y correo: index.html
+- Nombre y titulo de la doctora: bloque class="doctor" en index.html
+  (seccion Nosotros).
+- Pantalla de carga (diente con "Avident" al centro): div id="preloader"
+  en index.html y estilos .preloader__* en css/components.css.
+- Header: pegado arriba al 100% de ancho, con esquinas inferiores de
+  15px (variable --radius-header en css/tokens.css).
+- WhatsApp: hay dos botones (hero y seccion Reserva) con href a
+    https://wa.me/522213628798?text=...
+  El 52 es el codigo de Mexico y 2213628798 el numero de la doctora.
+  El mensaje va codificado en la URL (%20 = espacio). Para cambiarlo,
+  edita el texto despues de "text=" (puedes codificarlo en
+  https://www.urlencoder.org). Tambien esta el enlace tel: en la lista
+  de contacto.
 - Nota: el formulario de cita es solo visual (muestra una
   confirmacion). Para recibir correos reales se puede conectar a
   un servicio como Formspree o EmailJS.

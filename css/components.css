@@ -1,18 +1,19 @@
-/* ---------- Header (border-radius 25px) ---------- */
+/* ---------- Header (pegado arriba, 100% ancho, esquinas inferiores 15px) ---------- */
 .header {
-  position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
-  width: var(--container); z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0;
+  width: 100%; z-index: 100;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: .7rem 1.2rem .7rem 1.4rem;
+  padding: .7rem clamp(1rem, 4vw, 3rem);
   background: rgba(10, 10, 10, .78);
   backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--line);
-  border-radius: var(--radius-header);
+  border-top: 0;
+  border-radius: 0 0 var(--radius-header) var(--radius-header);
   box-shadow: var(--shadow);
   color: var(--white);
-  transition: padding .4s var(--ease), background .4s var(--ease), top .4s var(--ease);
+  transition: padding .4s var(--ease), background .4s var(--ease);
 }
-.header.is-scrolled { top: .5rem; padding-block: .45rem; background: rgba(10, 10, 10, .92); }
+.header.is-scrolled { padding-block: .45rem; background: rgba(10, 10, 10, .92); }
 .brand { display: flex; align-items: center; gap: .6rem; font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; }
 .brand em { font-style: normal; color: var(--gold); }
 .nav { display: flex; align-items: center; gap: .25rem; }
@@ -146,4 +147,16 @@ input[type="date"] { color-scheme: dark; }
 /* ---------- Preloader ---------- */
 .preloader { position: fixed; inset: 0; z-index: 500; background: var(--black); display: grid; place-items: center; transition: opacity .6s var(--ease), visibility .6s; }
 .preloader.is-done { opacity: 0; visibility: hidden; }
-.preloader__logo { animation: pulse 1.2s ease-in-out infinite; }
+.preloader__wrap { position: relative; display: grid; place-items: center; width: 9rem; height: 9rem; animation: pulse 1.2s ease-in-out infinite; }
+.preloader__logo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.preloader__text { position: relative; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--white); letter-spacing: .02em; }
+.preloader__text em { font-style: normal; color: var(--gold); }
+
+/* ---------- Botón WhatsApp ---------- */
+.btn--whatsapp { background: #25d366; color: #0a0a0a; box-shadow: 0 10px 30px -10px rgba(37, 211, 102, .6); }
+.btn--whatsapp:hover { box-shadow: 0 14px 40px -8px rgba(37, 211, 102, .8); }
+
+/* ---------- Doctora ---------- */
+.doctor { display: grid; gap: .25rem; padding: .9rem 1.2rem; border-left: 3px solid var(--gold); background: rgba(255, 255, 255, .05); border-radius: 0 12px 12px 0; }
+.doctor strong { font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-light); }
+.doctor span { font-size: .9rem; color: #e6e1d4; }

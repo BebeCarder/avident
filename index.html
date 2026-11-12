@@ -23,7 +23,10 @@
 </head>
 <body>
   <div class="preloader" id="preloader" aria-hidden="true">
-    <svg class="preloader__logo" viewBox="0 0 64 64" width="64" height="64"><use href="#icon-tooth"/></svg>
+    <div class="preloader__wrap">
+      <svg class="preloader__logo" viewBox="0 0 64 64"><use href="#icon-tooth"/></svg>
+      <span class="preloader__text">Av<em>ident</em></span>
+    </div>
   </div>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -76,6 +79,7 @@
           <div class="hero__actions">
             <a href="#cita" data-nav class="btn btn--gold">Reservar valoración</a>
             <a href="#servicios" data-nav class="btn btn--ghost">Ver tratamientos</a>
+            <a href="https://wa.me/522213628798?text=Buen%20d%C3%ADa%20doctora%20Avril%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20tratamientos.%20%F0%9F%98%8A" class="btn btn--whatsapp" target="_blank" rel="noopener">Contactar a la doctora por WhatsApp</a>
           </div>
           <ul class="hero__badges">
             <li><strong data-count="15" data-suffix="+">0</strong><span>años de experiencia</span></li>
@@ -143,6 +147,10 @@
           <span class="eyebrow">Nuestra filosofía</span>
           <h2>Precisión de <span class="gold-text">atelier</span>, calidez humana</h2>
           <p class="lead">Combinamos lo último en tecnología con una atención pausada y transparente. Sin prisas, sin sorpresas: tú decides con toda la información.</p>
+          <div class="doctor">
+            <strong>Dra. Avril Aurora Ramos Barrientos</strong>
+            <span>Cirujana dentista · Egresada de la Facultad de Odontología de la Universidad Autónoma de Guerrero</span>
+          </div>
           <ul class="ticks">
             <li>Planes de tratamiento claros y por escrito</li>
             <li>Materiales biocompatibles de primera línea</li>
@@ -249,10 +257,11 @@
           <p class="lead">Déjanos tus datos y te confirmaremos la cita en menos de 24 horas.</p>
           <ul class="contact">
             <li>📍 Av. Reforma 1200, Piso 4</li>
-            <li>📞 +52 55 1234 5678</li>
+            <li>📞 <a href="tel:+522213628798">221 362 8798</a></li>
             <li>✉️ hola@avident.com</li>
             <li>🕘 Lun – Sáb · 9:00 a 19:00</li>
           </ul>
+          <a href="https://wa.me/522213628798?text=Buen%20d%C3%ADa%20doctora%20Avril%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20tratamientos.%20%F0%9F%98%8A" class="btn btn--gold" target="_blank" rel="noopener">💬 Escribir a la Dra. Avril por WhatsApp</a>
         </div>
         <form class="form" id="bookingForm" novalidate>
           <label class="field"><span>Nombre completo</span><input type="text" name="nombre" required minlength="3" autocomplete="name"><small></small></label>
